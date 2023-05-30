@@ -130,7 +130,7 @@ class QuickVerseDataProviderEngine
 }
 
 export async function activate() {
-  logger.info("Extension template is activating!");
+  logger.info("Extension template is activating! iiii");
 
   const quickVerseDataProviderInfoPromise = papi.dataProvider.registerEngine(
     "paranext-extension-template.quick-verse",
