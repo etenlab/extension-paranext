@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -20,6 +21,6 @@
       "extension-types": ["./public/paranext-extension-template"]
     }
   },
-  "include": ["lib", "public/crowd-bible-extension.d.ts"],
+  "include": ["lib", "public/crowd-bible-extension.d.ts", ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

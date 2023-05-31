@@ -13,7 +13,6 @@ const {
 } = papi;
 
 globalThis.webViewComponent = function() {
-  const [clicks, setClicks] = useState(0);
 
   const someDataProvider = useDataProvider<SomeDataProvider>(
     "crowd-bible.test-data-engine"

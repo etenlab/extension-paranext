@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/src/*": ["lib/src/*"],
+      "@/components/*": ["lib/src/components/*"],
+      "@/constants/*": ["lib/src/constants/*"],
+      "@/dtos/*": ["lib/src/dtos/*"],
+      "@/hooks/*": ["lib/src/hooks/*"],
+      "@/models/*": ["lib/src/models/*"],
+      "@/mappers/*": ["lib/src/mappers/*"],
+      "@/pages/*": ["lib/src/pages/*"],
+      "@/reducers/*": ["lib/src/reducers/*"],
+      "@/repositories/*": ["lib/src/repositories/*"],
+      "@/routes/*": ["lib/src/routes/*"],
+      "@/services/*": ["lib/src/services/*"],
+      "@/utils/*": ["lib/src/utils/*"]
+    }
+  }
+}
