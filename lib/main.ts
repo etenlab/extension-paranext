@@ -4,7 +4,6 @@ import IDataProviderEngine from "shared/models/data-provider-engine.model";
 import extensionTemplateReact from "./extension-template.web-view";
 import extensionTemplateReactStyles from "./extension-template.web-view.scss?inline";
 // @ts-expect-error ts(1192) this file has no default export; the text is exported by rollup
-import extensionTemplateHtml from "./extension-template-html.web-view.ejs";
 import type { WebViewContentType } from "shared/data/web-view.model";
 
 const { logger } = papi;
@@ -152,12 +151,6 @@ export async function activate() {
     styles: extensionTemplateReactStyles,
   });
   
-  papi.webViews.addWebView({
-    id: 'Extension template WebView HTML',
-    contentType: 'html' as WebViewContentType.HTML,
-    content: extensionTemplateHtml,
-  });
-
   // For now, let's just make things easy and await the data provider promise at the end so we don't hold everything else up
   const quickVerseDataProviderInfo = await quickVerseDataProviderInfoPromise;
 
