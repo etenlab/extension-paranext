@@ -74,6 +74,11 @@ const extensionConfig = defineConfig(async () => {
       // Generate sourcemaps as separate files since VSCode can load them directly
       sourcemap: true,
     },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../lib/src'),
+      },
+    },
   };
 });
 

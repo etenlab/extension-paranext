@@ -86,6 +86,11 @@ const webViewConfig = defineConfig(async ({ mode }) => {
       // We do not want to copy the public files as we will do that in the next build step
       copyPublicDir: false,
     },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../lib/src'),
+      },
+    },    
   };
 });
 

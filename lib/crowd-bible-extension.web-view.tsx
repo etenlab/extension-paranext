@@ -3,6 +3,7 @@ import papi from "papi";
 
 import { useState } from "react";
 import { SomeDataProvider } from "extension-types";
+import App from "./src/App";
 
 const {
   react: {
@@ -22,25 +23,7 @@ globalThis.webViewComponent = function() {
 
   return (
     <>
-      <div className="title">
-        Extension Template <span className="framework">React</span> - testing for crowd.Bible
-      </div>
-      <div>{someData}</div>
-      <div>
-        <Button
-          onClick={async () => {
-            const result = await papi.commands.sendCommand(
-              'corwd-bible.show-message',
-              'Extension Template React Component',
-            );
-            logger.info(
-              `command:extension-template.do-stuff, result: '${result}'`,
-            );
-          }}
-        >
-          send command  'extension-template.do-stuff'
-        </Button>
-      </div>
+      <App/>
     </>
   );
 }
