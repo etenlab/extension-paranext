@@ -14,6 +14,7 @@ import {
   insertWebViewTempDir,
   webViewTempGlob,
   getFileExtensionByModuleFormat,
+  webViewTsxGlob,
 } from "./vite.util";
 
 // https://vitejs.dev/config/
@@ -61,7 +62,7 @@ const extensionConfig = defineConfig(async () => {
         entry: path.resolve(__dirname, "../lib/main.ts"),
         // The output file name for the extension (file extension is appended)
         fileName: (moduleFormat, entryName) =>
-          `paranext-extension-template.${getFileExtensionByModuleFormat(
+          `crowd-bible-extension.${getFileExtensionByModuleFormat(
             moduleFormat
           )}`,
         // Output to cjs format as that's what Paranext supports

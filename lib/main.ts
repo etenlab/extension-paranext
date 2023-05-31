@@ -1,9 +1,10 @@
 import papi from "papi";
 // import papi from "shared/services/papi.service";
 
-import IDataProviderEngine from "shared/models/data-provider-engine.model";
+// import IDataProviderEngine from "shared/models/data-provider-engine.model";
 // @ts-expect-error ts(1192) this file has no default export; the text is exported by rollup
 import crowdBibleExtension from "./crowd-bible-extension.web-view";
+import type IDataProviderEngine from "shared/models/data-provider-engine.model";
 
 const { logger } = papi;
 logger.info("Crowd.Bible Extension is importing!");

@@ -1,10 +1,10 @@
 {
-  "name": "paranext-extension-template",
+  "name": "crowd-bible-extension",
   "version": "0.0.1",
   "description": "Extension template for Paranext. Powered by Vite",
-  "main": "paranext-extension-template.js",
-  "types": "paranext-extension-template.d.ts",
+  "main": "crowd-bible-extension.js",
+  "types": "crowd-bible-extension.d.ts",
   "scripts": {},
-  "author": "Paranext",
+  "author": "F.Y.",
   "license": "MIT"
 }
