@@ -13,11 +13,11 @@ import { RelationshipPropertyValueRepository } from '@/repositories/relationship
 import { RelationshipRepository } from '@/repositories/relationship/relationship.repository';
 import { RelationshipTypeRepository } from '@/repositories/relationship/relationship-type.repository';
 
-import { NodeType } from '@/src/models/';
-import { type Node } from '@/src/models/';
+import { NodeType } from '@/models/';
+import { type Node } from '@/models/';
 
-import { RelationshipType } from '@/src/models/';
-import { type Relationship } from '@/src/models/';
+import { RelationshipType } from '@/models/';
+import { type Relationship } from '@/models/';
 
 import { PropertyKeyConst } from '@/constants/graph.constant';
 

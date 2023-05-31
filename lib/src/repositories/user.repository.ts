@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { User } from '@/src/models/';
+import { User } from '@/models/';
 import { DbService } from '@/services/db.service';
 
 export class UserRepository {

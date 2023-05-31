@@ -8,8 +8,8 @@ import { NewApplicationAddPage } from '@/pages/AppDev/NewApplicationAddPage';
 import { SiteTextAppListPage } from '@/pages/AppDev/SiteTextAppListPage';
 import { SiteTextListPage } from '@/pages/AppDev/SiteTextListPage';
 
-import { NewSiteTextAddPage } from '@/src/pages/AppDev/NewSiteTextAddPage';
-import { NewSiteTextTranslationAddPage } from '@/src/pages/AppDev/NewSiteTextTranslationAddPage';
+import { NewSiteTextAddPage } from '@/pages/AppDev/NewSiteTextAddPage';
+import { NewSiteTextTranslationAddPage } from '@/pages/AppDev/NewSiteTextTranslationAddPage';
 
 import { SiteTextDetailPage } from '@/pages/AppDev/SiteTextDetailPage';
 

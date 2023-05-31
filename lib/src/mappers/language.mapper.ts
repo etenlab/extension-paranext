@@ -1,4 +1,4 @@
-import { Node } from '@/src/models';
+import { Node } from '@/models';
 import { subTags2LangInfo } from '@/utils/langUtils';
 export class LanguageMapper {
   static entityToDto(entity: Node) {

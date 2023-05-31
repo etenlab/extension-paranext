@@ -11,7 +11,7 @@ import {
   IonToast,
 } from '@ionic/react';
 
-import txtfile from '@/utils/iso_639_3_min.tab';
+// import txtfile from '@/utils/iso_639_3_min.tab';
 import { LoadingStatus } from '../enums';
 // import useSeedService from '../hooks/useSeedService';
 import { NodeTypeConst } from '../constants/graph.constant';
@@ -42,16 +42,18 @@ export function AdminPage() {
   const addNewData = async () => {
     setLoadingStatus(LoadingStatus.LOADING);
     try {
-      const res = await fetch(txtfile);
-      const data = await res.text();
+      // const res = await fetch(txtfile);
+      // const data = await res.text();
+      const data = ''
       if (!singletons) {
         return;
       }
 
       setLoadingMessage('Creating table...');
-      const table = await singletons.tableService.createTable(
-        'iso_639_3_min.tab',
-      );
+      const table =''
+      //   await singletons.tableService.createTable(
+      //   'iso_639_3_min.tab',
+      // );
 
       const rows = data.split(/\r?\n/);
       const columns = rows.shift()?.split('\t');
@@ -156,7 +158,7 @@ export function AdminPage() {
   };
 
   const materialize = async () => {
-    singletons?.materializerService.materialize('iso_639_3_min.tab');
+    // singletons?.materializerService.materialize('iso_639_3_min.tab');
   };
 
   return (

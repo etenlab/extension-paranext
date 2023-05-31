@@ -1,8 +1,8 @@
 import { FindOptionsWhere } from 'typeorm';
 
-import { Node } from '@/src/models/';
-import { RelationshipType } from '@/src/models/';
-import { Relationship } from '@/src/models/';
+import { Node } from '@/models/';
+import { RelationshipType } from '@/models/';
+import { Relationship } from '@/models/';
 import { type DbService } from '@/services/db.service';
 import { type SyncService } from '@/services/sync.service';
 

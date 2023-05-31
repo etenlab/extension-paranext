@@ -13,7 +13,7 @@ import { DescriptionList, DescriptionItem } from '@/components/DescriptionList';
 
 import { RouteConst } from '@/constants/route.constant';
 
-import { SiteTextTranslationDto } from '@/src/dtos/site-text.dto';
+import { SiteTextTranslationDto } from '@/dtos/site-text.dto';
 
 import { compareLangInfo } from '@/utils/langUtils';
 

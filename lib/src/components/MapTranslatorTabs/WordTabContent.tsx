@@ -10,12 +10,12 @@ import {
   MuiMaterial,
 } from '@eten-lab/ui-kit';
 
-import { WordDto } from '@/src/dtos/word.dto';
+import { WordDto } from '@/dtos/word.dto';
 import {
   NodeTypeConst,
   PropertyKeyConst,
   RelationshipTypeConst,
-} from '@/src/constants/graph.constant';
+} from '@/constants/graph.constant';
 import {
   StyledFilterButton,
   StyledSectionTypography,

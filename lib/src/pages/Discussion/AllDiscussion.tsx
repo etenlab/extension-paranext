@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { CreateDiscussion } from '@/components/dicussion/CreateDiscussion/CreateDiscussion';
 import { DiscussionList } from '@/components/dicussion/DiscussionList';
-import { Discussion } from '@/src/models';
+import { Discussion } from '@/models';
 import { Typography } from '@eten-lab/ui-kit';
-import { useSingletons } from '@/src/hooks/useSingletons';
+import { useSingletons } from '@/hooks/useSingletons';
 import './DiscussionList.css';
 
 export const AllDiscussion = () => {

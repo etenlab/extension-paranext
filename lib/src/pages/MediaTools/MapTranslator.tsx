@@ -1,8 +1,8 @@
 import { IonContent } from '@ionic/react';
 import { MuiMaterial, Button } from '@eten-lab/ui-kit';
 import { useState } from 'react';
-import { WordTabContent } from '@/src/components/MapTranslatorTabs/WordTabContent';
-import { MapTabContent } from '@/src/components/MapTranslatorTabs/MapTabContent';
+import { WordTabContent } from '@/components/MapTranslatorTabs/WordTabContent';
+import { MapTabContent } from '@/components/MapTranslatorTabs/MapTabContent';
 const { Box, Typography, styled } = MuiMaterial;
 
 export const MapTranslatorPage = () => {

@@ -2,9 +2,9 @@ import { ElectionRepository } from '@/repositories/voting/election.repository';
 import { CandidateRepository } from '@/repositories/voting/candidate.repository';
 import { VoteRepository } from '@/repositories/voting/vote.repository';
 
-import { Election } from '@/src/models';
-import { Candidate } from '@/src/models';
-import { Vote } from '@/src/models';
+import { Election } from '@/models';
+import { Candidate } from '@/models';
+import { Vote } from '@/models';
 
 import { ElectionTypeConst } from '@/constants/voting.constant';
 

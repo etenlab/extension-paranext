@@ -14,7 +14,7 @@ import { DescriptionList, DescriptionItem } from '@/components/DescriptionList';
 import { RouteConst } from '@/constants/route.constant';
 
 import { VotableContent } from '@/dtos/votable-item.dto';
-import { SiteTextDto } from '@/src/dtos/site-text.dto';
+import { SiteTextDto } from '@/dtos/site-text.dto';
 
 import { compareLangInfo } from '@/utils/langUtils';
 

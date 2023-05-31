@@ -9,7 +9,7 @@ import {
   SearchInput,
   BiFile,
 } from '@eten-lab/ui-kit';
-import { DocumentDto } from '@/src/dtos/document.dto';
+import { DocumentDto } from '@/dtos/document.dto';
 
 import { useAppContext } from '@/hooks/useAppContext';
 import { useDocument } from '@/hooks/useDocument';

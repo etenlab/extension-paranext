@@ -18,7 +18,7 @@ import { TranslationService } from './translation.service';
 import { WordService } from './word.service';
 import { DocumentService } from './document.service';
 
-import { Candidate } from '@/src/models/';
+import { Candidate } from '@/models/';
 
 import { LanguageInfo } from '@eten-lab/ui-kit';
 import { LanguageMapper } from '@/mappers/language.mapper';

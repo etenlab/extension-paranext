@@ -10,7 +10,7 @@ import {
   MainKeyName,
 } from '@/constants/graph.constant';
 
-import { Node, Relationship } from '@/src/models';
+import { Node, Relationship } from '@/models';
 
 import { WordDto } from '@/dtos/word.dto';
 import { WordMapper } from '@/mappers/word.mapper';

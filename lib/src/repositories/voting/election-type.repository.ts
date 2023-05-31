@@ -1,4 +1,4 @@
-import { ElectionType } from '@/src/models/';
+import { ElectionType } from '@/models/';
 import { type DbService } from '@/services/db.service';
 import { type SyncService } from '@/services/sync.service';
 

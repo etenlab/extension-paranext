@@ -1,5 +1,5 @@
 import { MapDto } from '../dtos/map.dto';
-import { Node } from '@/src/models';
+import { Node } from '@/models';
 import { subTags2LangInfo } from '../utils/langUtils';
 
 export class MapMapper {

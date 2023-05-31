@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { IonItem } from '@ionic/react';
 
 import { Typography } from '@eten-lab/ui-kit';
-import { RouteConst } from '@/src/constants/route.constant';
-import { decodeToken, isTokenValid } from '@/src/utils/AuthUtils';
+import { RouteConst } from '@/constants/route.constant';
+import { decodeToken, isTokenValid } from '@/utils/AuthUtils';
 import { useAppContext } from '../../hooks/useAppContext';
 
 export function LogoutButton() {

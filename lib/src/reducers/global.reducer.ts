@@ -1,6 +1,6 @@
 import { actions } from './global.actions';
 import { type ActionType } from '.';
-import { type ISingletons } from '@/src/singletons';
+import { type ISingletons } from '@/singletons';
 
 export type FeedbackType = 'success' | 'error' | 'info' | 'warning';
 

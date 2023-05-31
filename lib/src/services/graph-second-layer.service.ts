@@ -1,7 +1,7 @@
 import { GraphFirstLayerService } from './graph-first-layer.service';
 
-import { type Node } from '@/src/models/';
-import { type Relationship } from '@/src/models/';
+import { type Node } from '@/models/';
+import { type Relationship } from '@/models/';
 import { PropertyKeyConst } from '../constants/graph.constant';
 
 export class GraphSecondLayerService {

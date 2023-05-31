@@ -11,8 +11,8 @@ import {
   IconBox,
 } from '@eten-lab/ui-kit';
 import { NodeTypeConst } from '@/constants/graph.constant';
-import { useAppContext } from '@/src/hooks/useAppContext';
-import { StyledSectionTypography } from '@/src/components/MapTranslatorTabs/StyledComponents';
+import { useAppContext } from '@/hooks/useAppContext';
+import { StyledSectionTypography } from '@/components/MapTranslatorTabs/StyledComponents';
 import JSZip from 'jszip';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { Proskomma } = require('proskomma');

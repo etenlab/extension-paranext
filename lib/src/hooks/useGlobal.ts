@@ -22,7 +22,7 @@ import {
   type IMode,
   type PrefersColorSchemeType,
 } from '@/reducers/global.reducer';
-import { type ISingletons } from '@/src/singletons';
+import { type ISingletons } from '@/singletons';
 
 interface UseGlobalProps {
   dispatch: Dispatch<ActionType<unknown>>;

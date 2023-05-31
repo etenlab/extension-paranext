@@ -2,8 +2,8 @@ import { FindOptionsWhere, In } from 'typeorm';
 
 import { DbService } from '@/services/db.service';
 import { SyncService } from '@/services/sync.service';
-import { NodeType } from '@/src/models';
-import { Node } from '@/src/models';
+import { NodeType } from '@/models';
+import { Node } from '@/models';
 
 import {
   NodeTypeConst,

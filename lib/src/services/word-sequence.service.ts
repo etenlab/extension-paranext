@@ -9,7 +9,7 @@ import {
   RelationshipTypeConst,
 } from '@/constants/graph.constant';
 
-import { Node, Relationship } from '@/src/models';
+import { Node, Relationship } from '@/models';
 
 import { WordSequenceDto, SubWordSequenceDto } from '@/dtos/word-sequence.dto';
 

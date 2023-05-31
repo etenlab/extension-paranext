@@ -2,8 +2,8 @@ import React, { useEffect, useReducer, useState } from 'react';
 import { IonContent } from '@ionic/react';
 import { CrowdBibleUI, MuiMaterial } from '@eten-lab/ui-kit';
 import { Like } from 'typeorm';
-import { useGlobal } from '@/src/hooks/useGlobal';
-import { initialState, reducer } from '@/src/reducers';
+import { useGlobal } from '@/hooks/useGlobal';
+import { initialState, reducer } from '@/reducers';
 import { useHistory } from 'react-router';
 import { useAppContext } from '../../../hooks/useAppContext';
 

@@ -15,7 +15,7 @@ import { useDocument } from '@/hooks/useDocument';
 
 import { SiteTextTranslationDto, SiteTextDto } from '@/dtos/site-text.dto';
 import { AppDto } from '@/dtos/document.dto';
-import { compareLangInfo } from '@/src/utils/langUtils';
+import { compareLangInfo } from '@/utils/langUtils';
 
 const { HeadBox } = CrowdBibleUI;
 

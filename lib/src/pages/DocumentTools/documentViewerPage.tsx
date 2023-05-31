@@ -6,7 +6,7 @@ import { IonContent } from '@ionic/react';
 import { CrowdBibleUI, Typography } from '@eten-lab/ui-kit';
 
 import { DocumentDto } from '@/dtos/document.dto';
-import { WordSequenceDto } from '@/src/dtos/word-sequence.dto';
+import { WordSequenceDto } from '@/dtos/word-sequence.dto';
 
 import { useAppContext } from '@/hooks/useAppContext';
 import { useDocument } from '@/hooks/useDocument';
