@@ -3,12 +3,10 @@ import papi from "papi";
 
 import IDataProviderEngine from "shared/models/data-provider-engine.model";
 // @ts-expect-error ts(1192) this file has no default export; the text is exported by rollup
-import extensionTemplateReact from "./extension-template.web-view";
-import extensionTemplateReactStyles from "./extension-template.web-view.scss?inline";
+import crowdBibleExtension from "./crowd-bible-extension.web-view";
 
 const { logger } = papi;
-console.log(import.meta.env.PROD);
-logger.info("Extension template is importing!");
+logger.info("Crowd.Bible Extension is importing!");
 
 const unsubscribers = [];
 
@@ -41,8 +39,6 @@ class SomeDataProviderEngine
     //     this.#getSelector(selector)
     //   )}`
     // );
-
-    // this.data[key] = `got from nowhere at ${new Date().toISOString()}`;
     // this.notifyUpdate();
 
 
@@ -52,27 +48,27 @@ class SomeDataProviderEngine
 }
 
 export async function activate() {
-  logger.info("Extension template is activating! iiii");
+  logger.info("Crowd.Bible Extension is activating!");
 
   const someDataProviderPromise = papi.dataProvider.registerEngine(
-    // "paranext-extension-template.quick-verse",
     "crowd-bible.test-data-engine",
     new SomeDataProviderEngine()
   );
 
   const unsubPromises = [
     papi.commands.registerCommand(
-      "extension-template.do-stuff",
+      "corwd-bible.show-message",
       (message: string) => {
-        return `papi.commands.registerCommand unsubscriber message: ${message}`;
+        return `crowd.Bible shows message from main.ts: ${message}`;
       }
     ),
   ];
 
   papi.webViews.addWebView({
-    id: 'Extension template WebView React',
-    content: extensionTemplateReact,
-    styles: extensionTemplateReactStyles,
+    id: 'Crowd.Bible extension',
+    title: 'Crowd.Bible',
+    content: crowdBibleExtension,
+    styles: {},
   });
 
 

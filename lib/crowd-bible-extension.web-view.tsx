@@ -31,7 +31,7 @@ globalThis.webViewComponent = function() {
         <Button
           onClick={async () => {
             const result = await papi.commands.sendCommand(
-              'extension-template.do-stuff',
+              'corwd-bible.show-message',
               'Extension Template React Component',
             );
             logger.info(

@@ -20,6 +20,6 @@
       "extension-types": ["./public/paranext-extension-template"]
     }
   },
-  "include": ["lib", "public/paranext-extension-template.d.ts"],
+  "include": ["lib", "public/crowd-bible-extension.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
