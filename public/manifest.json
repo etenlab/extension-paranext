@@ -4,6 +4,6 @@
   "description": "Crowd.Bible Extension for Paranext. Powered by Vite",
   "author": "F.Y.",
   "license": "MIT",
-  "main": "main.ts",
+  "main": "crowd-bible-extension.js",
   "activationEvents": []
 }
