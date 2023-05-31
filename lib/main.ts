@@ -1,4 +1,6 @@
 import papi from "papi";
+// import papi from "shared/services/papi.service";
+
 import IDataProviderEngine from "shared/models/data-provider-engine.model";
 // @ts-expect-error ts(1192) this file has no default export; the text is exported by rollup
 import extensionTemplateReact from "./extension-template.web-view";
@@ -41,7 +43,7 @@ class SomeDataProviderEngine
     // );
 
     // this.data[key] = `got from nowhere at ${new Date().toISOString()}`;
-    this.notifyUpdate();
+    // this.notifyUpdate();
 
 
     return this.data[key];
@@ -53,7 +55,8 @@ export async function activate() {
   logger.info("Extension template is activating! iiii");
 
   const someDataProviderPromise = papi.dataProvider.registerEngine(
-    "paranext-extension-template.quick-verse",
+    // "paranext-extension-template.quick-verse",
+    "crowd-bible.test-data-engine",
     new SomeDataProviderEngine()
   );
 
@@ -61,7 +64,7 @@ export async function activate() {
     papi.commands.registerCommand(
       "extension-template.do-stuff",
       (message: string) => {
-        return `The template did stuff! ${message}`;
+        return `papi.commands.registerCommand unsubscriber message: ${message}`;
       }
     ),
   ];

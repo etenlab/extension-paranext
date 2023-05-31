@@ -1,6 +1,8 @@
 import papi from "papi";
+// import papi from "shared/services/papi.service";
+
 import { useState } from "react";
-import { QuickVerseDataProvider } from "extension-types";
+import { SomeDataProvider } from "extension-types";
 
 const {
   react: {
@@ -13,39 +15,31 @@ const {
 globalThis.webViewComponent = function() {
   const [clicks, setClicks] = useState(0);
 
-  const quickVerseDataProvider = useDataProvider<QuickVerseDataProvider>(
-    "paranext-extension-template.quick-verse"
+  const someDataProvider = useDataProvider<SomeDataProvider>(
+    "crowd-bible.test-data-engine"
   );
 
-  const [latestVerseText] = useData(
-    quickVerseDataProvider,
-    "latest",
-    "Loading latest Scripture text..."
-  );
+  const someData = useData(someDataProvider);
 
   return (
     <>
       <div className="title">
-        Extension Template <span className="framework">React</span>
+        Extension Template <span className="framework">React</span> - testing for crowd.Bible
       </div>
-      <div>{latestVerseText}</div>
+      <div>{someData}</div>
       <div>
         <Button
           onClick={async () => {
-            const start = performance.now();
             const result = await papi.commands.sendCommand(
               'extension-template.do-stuff',
               'Extension Template React Component',
             );
-            setClicks((currentClicks) => currentClicks + 1);
             logger.info(
-              `command:extension-template.do-stuff '${result}' took ${
-                performance.now() - start
-              } ms`,
+              `command:extension-template.do-stuff, result: '${result}'`,
             );
           }}
         >
-          Hi-from-crowd-bible {clicks}
+          send command  'extension-template.do-stuff'
         </Button>
       </div>
     </>
