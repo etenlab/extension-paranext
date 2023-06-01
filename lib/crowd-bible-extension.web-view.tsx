@@ -2,8 +2,8 @@ import papi from "papi";
 // import papi from "shared/services/papi.service";
 
 import { useState } from "react";
-import { SomeDataProvider } from "extension-types";
 import App from "./src/App";
+import { SomeDataProvider } from "../public/crowd-bible-extension";
 
 const {
   react: {
