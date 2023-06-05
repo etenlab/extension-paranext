@@ -17,7 +17,11 @@ export function ButtonWithContext() {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        // color={'red'}  // doesn't work
+        // color={''}
+        sx={{
+          backgroundColor: 'red',
+          color: 'green',
+        }}
       />
       <Button // import from ui-kit - OK
         onClick={() => {
