@@ -4,9 +4,10 @@ import { IonApp, setupIonicReact } from "@ionic/react";
 import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { createUploadLink } from 'apollo-upload-client';
+import { AppContextProvider } from "./AppContext";
 
 /** doesn't work */
-// setupIonicReact();
+setupIonicReact();
 
 /** doesn't work*/
 // const uploadLink = createUploadLink({
@@ -26,17 +27,20 @@ export default function App() {
       {/* <ApolloProvider client={client}> */}
       
       {/* <IonApp> */}
-        <TextField
-          variant="outlined"
-          value={value}
-          onChange={(e) => {setValue(e.target.value)}}
-          // color={'red'}  // doesn't work
-        />
-        <Button
-          onClick={() => {setValue('clicked')}}
-        >
-          test button
-        </Button>
+        {/* <AppContextProvider> */}
+
+          <TextField
+            variant="outlined"
+            value={value}
+            onChange={(e) => {setValue(e.target.value)}}
+            // color={'red'}  // doesn't work
+          />
+          <Button
+            onClick={() => {setValue('clicked')}}
+          >
+            test button
+          </Button>
+        {/* </AppContextProvider> */}
         {/* </IonApp> */}
       {/* </ApolloProvider> */}
         
