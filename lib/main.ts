@@ -3,8 +3,9 @@ import papi from 'papi';
 
 // import IDataProviderEngine from "shared/models/data-provider-engine.model";
 // @ts-expect-error ts(1192) this file has no default export; the text is exported by rollup
-import crowdBibleExtension from './crowd-bible-extension.web-view';
-import type IDataProviderEngine from 'shared/models/data-provider-engine.model';
+import crowdBibleExtension from "./crowd-bible-extension.web-view";
+import type IDataProviderEngine from "shared/models/data-provider-engine.model";
+import styles from "../style.css?inline";
 
 const { logger } = papi;
 logger.info('Crowd.Bible Extension is importing!');
@@ -63,10 +64,12 @@ export async function activate() {
   ];
 
   papi.webViews.addWebView({
-    id: 'Crowd.Bible extension',
-    title: 'Crowd.Bible',
+    id: "Crowd.Bible extension",
+    title: "Crowd.Bible",
     content: crowdBibleExtension,
-    styles: {},
+    // You can pass styles into the WebView by importing them as a string with `?inline`
+    // on the import and then passing them in here as the `styles` property
+    styles,
   });
 
   const unsumbs = await Promise.all(
