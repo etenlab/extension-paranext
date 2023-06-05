@@ -18,32 +18,31 @@ import { useDocumentTools } from '@/hooks/useDocumentTools';
 
 import { getAppDataSource } from './data-source';
 import getSingletons from './singletons';
-import { LoggerService } from './services/logger.service';
 
 export interface ContextType {
   states: {
     global: GlobalStateType;
-    documentTools: DocumentToolsStateType;
+    // documentTools: DocumentToolsStateType;
   };
   actions: {
-    setUser: (user: IUser) => void;
-    setRole: (roles: RoleType) => void;
-    setMode: (mode: IMode) => void;
-    setPrefersColorScheme: (themeMode: PrefersColorSchemeType) => void;
-    setConnectivity: (connectivity: boolean) => void;
-    logout: () => void;
     alertFeedback: (feedbackType: FeedbackType, message: string) => void;
-    closeFeedback: () => void;
-    setSourceLanguage: (lang: LanguageInfo | null) => void;
-    setTargetLanguage: (lang: LanguageInfo | null) => void;
-    setLoadingState: (state: boolean) => void;
-    setSqlPortalShown: (isSqlPortalShown: boolean) => void;
+    // setUser: (user: IUser) => void;
+    // setRole: (roles: RoleType) => void;
+    // setMode: (mode: IMode) => void;
+    // setPrefersColorScheme: (themeMode: PrefersColorSchemeType) => void;
+    // setConnectivity: (connectivity: boolean) => void;
+    // logout: () => void;
+    // closeFeedback: () => void;
+    // setSourceLanguage: (lang: LanguageInfo | null) => void;
+    // setTargetLanguage: (lang: LanguageInfo | null) => void;
+    // setLoadingState: (state: boolean) => void;
+    // setSqlPortalShown: (isSqlPortalShown: boolean) => void;
   };
-  logger: LoggerService;
 }
 
 export const AppContext = createContext<ContextType | undefined>(undefined);
 
+// const initialState = loadPersistedStore();
 const initialState = loadPersistedStore();
 
 interface AppProviderProps {
@@ -55,16 +54,16 @@ export function AppContextProvider({ children }: AppProviderProps) {
 
   const {
     alertFeedback,
-    closeFeedback,
-    setRole,
-    setUser,
-    setMode,
-    setConnectivity,
-    setPrefersColorScheme,
-    logout,
-    setLoadingState,
-    setSingletons,
-    setSqlPortalShown,
+    // closeFeedback,
+    // setRole,
+    // setUser,
+    // setMode,
+    // setConnectivity,
+    // setPrefersColorScheme,
+    // logout,
+    // setLoadingState,
+    // setSingletons,
+    // setSqlPortalShown,
   } = useGlobal({
     dispatch,
   });
@@ -73,42 +72,42 @@ export function AppContextProvider({ children }: AppProviderProps) {
     dispatch,
   });
 
-  const logger = useRef(new LoggerService());
+  // useEffect(() => {
+  //   window.addEventListener('offline', () => {
+  //     setConnectivity(false);
+  //   });
+  //   window.addEventListener('online', () => {
+  //     setConnectivity(true);
+  //   });
+  // }, [setConnectivity]);
 
-  useEffect(() => {
-    window.addEventListener('offline', () => {
-      setConnectivity(false);
-    });
-    window.addEventListener('online', () => {
-      setConnectivity(true);
-    });
-  }, [setConnectivity]);
-
-  useEffect(() => {
-    setSingletons(null);
-    getAppDataSource().then((_ds) => {
-      getSingletons(_ds).then(setSingletons);
-    });
-  }, [setSingletons]);
+  // useEffect(() => {
+  //   setSingletons(null);
+  //   getAppDataSource().then((_ds) => {
+  //     getSingletons(_ds).then(setSingletons);
+  //   });
+  // }, [setSingletons]);
 
   const value = {
-    states: { global: state.global, documentTools: state.documentTools },
-    actions: {
-      closeFeedback,
-      alertFeedback,
-      setRole,
-      setUser,
-      setMode,
-      setConnectivity,
-      setPrefersColorScheme,
-      setLoadingState,
-      setSingletons,
-      setSourceLanguage,
-      setTargetLanguage,
-      logout,
-      setSqlPortalShown,
+    states: {
+      global: state.global,
+      // documentTools: state.documentTools
     },
-    logger: state?.global?.singletons?.loggerService || logger.current,
+    actions: {
+      alertFeedback,
+      // closeFeedback,
+      // setRole,
+      // setUser,
+      // setMode,
+      // setConnectivity,
+      // setPrefersColorScheme,
+      // setLoadingState,
+      // setSingletons,
+      // setSourceLanguage,
+      // setTargetLanguage,
+      // logout,
+      // setSqlPortalShown,
+    },
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

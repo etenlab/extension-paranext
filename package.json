@@ -94,6 +94,8 @@
     "concurrently": "^8.0.1",
     "cross-env": "^7.0.3",
     "escape-string-regexp": "^5.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "glob": "^10.2.2",
     "papi-dts": "file:../paranext-core/lib/papi-dts",
     "patch-package": "^7.0.0",

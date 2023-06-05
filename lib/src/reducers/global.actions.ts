@@ -1,3 +1,4 @@
+import { ISingletons } from '../singletons';
 import {
   type FeedbackType,
   type RoleType,
@@ -5,7 +6,6 @@ import {
   type IMode,
   type PrefersColorSchemeType,
 } from './global.reducer';
-import { type ISingletons } from '@/singletons';
 
 export const actions = {
   ALERT_FEEDBACK: 'ALERT_FEEDBACK',
