@@ -1,9 +1,7 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { Button } from "@eten-lab/ui-kit";
-import { IonApp, setupIonicReact } from "@ionic/react";
 import { TextField } from "@mui/material";
 import React, { useState } from "react";
-import { createUploadLink } from 'apollo-upload-client';
+import { AppContextProvider } from "./AppContext";
+import { ButtonWithContext } from "./components/buttonWithContext";
 
 /** doesn't work */
 // setupIonicReact();
@@ -19,25 +17,24 @@ import { createUploadLink } from 'apollo-upload-client';
 
 export default function App() {
   const [value, setValue] = useState('')
-
   
   return (
     <React.StrictMode>
       {/* <ApolloProvider client={client}> */}
       
       {/* <IonApp> */}
-        <TextField
+      <AppContextProvider>
+        <TextField // direct import from MUI
           variant="outlined"
           value={value}
           onChange={(e) => {setValue(e.target.value)}}
           // color={'red'}  // doesn't work
         />
-        <Button
-          onClick={() => {setValue('clicked')}}
-        >
-          test button
-        </Button>
+        <ButtonWithContext
+          setValue={setValue}
+        ></ButtonWithContext>
         {/* </IonApp> */}
+      </AppContextProvider>      
       {/* </ApolloProvider> */}
         
     </React.StrictMode>    
