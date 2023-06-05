@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AppContextProvider } from './AppContext';
 import { ButtonWithContext } from './components/buttonWithContext';
 import { AlertWithContext } from './components/alertWithContext';
+import { IonApp, setupIonicReact } from '@ionic/react';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { createUploadLink } from 'apollo-upload-client';
 
 setupIonicReact();
 
@@ -17,13 +20,12 @@ export default function App() {
   return (
     <React.StrictMode>
       <ApolloProvider client={client}>
-
-      <IonApp>
-      <AppContextProvider>
-        <AlertWithContext></AlertWithContext>
-        <ButtonWithContext></ButtonWithContext>
-      </AppContextProvider>
-      </IonApp>
+        <IonApp>
+          <AppContextProvider>
+            <AlertWithContext></AlertWithContext>
+            <ButtonWithContext></ButtonWithContext>
+          </AppContextProvider>
+        </IonApp>
       </ApolloProvider>
     </React.StrictMode>
   );
