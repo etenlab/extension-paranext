@@ -29,7 +29,19 @@ const webViewConfig = defineConfig(async ({ mode }) => {
     ],
     // Since Vite is in library mode `process` is not replaced by default and that won't work in the
     // renderer.
-    define: { 'process.env.NODE_ENV': JSON.stringify(mode) },
+    define: { 
+      'process.env.NODE_ENV': JSON.stringify(mode),
+      // There were a lot of process variables that we must bake in. Set them to whatever is
+      // correct for your build process
+      'process.env.REACT_APP_CPG_SERVER_URL': '"FAKE_URL"',
+      'process.env.REACT_APP_KEYCLOAK_URL': '"FAKE_URL"',
+      'process.env.REACT_APP_KEYCLOAK_REALM': '"FAKE_REALM"',
+      'process.env.REACT_APP_KEYCLOAK_CLIENT_ID': '"FAKE_CID"',
+      'process.env.REACT_APP_KEYCLOAK_CLIENT_SECRET': '"FAKE_SECRET"',
+      'process.env.PUBLIC_URL': '"FAKE_URL"',
+      'process.env.REACT_APP_LOGLEVEL': '"FAKE_LOGLEVEL"',
+      'process.env.REACT_APP_LOGTRACEALL': '"FAKE_LOGTRACEALL"',
+    },
     build: {
       // This project is a library as it is being used in Paranext
       lib: {
@@ -75,6 +87,10 @@ const webViewConfig = defineConfig(async ({ mode }) => {
       rollupOptions: {
         // Do not bundle papi because it will be imported in Paranext
         external: paranextProvidedModules,
+        output: {
+          // Disable code splitting and chunks. Extension WebViews must be a single file
+          manualChunks: () => 'webView'
+        }
       },
       // Bundle the sourcemap into the webview file since it will be injected as a string
       // into the main file
