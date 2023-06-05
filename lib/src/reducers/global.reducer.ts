@@ -85,7 +85,6 @@ export function reducer(
         feedbackType: FeedbackType;
         message: string;
       };
-      console.log('!!!!!!!!!!!!!!!', JSON.stringify(message))
       return {
         ...prevState,
         snack: {

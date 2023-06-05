@@ -1,8 +1,7 @@
-import { TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { AppContextProvider } from './AppContext';
 import { ButtonWithContext } from './components/buttonWithContext';
-import { useAppContext } from './hooks/useAppContext';
+import { AlertWithContext } from './components/alertWithContext';
 
 /** doesn't work */
 // setupIonicReact();
@@ -17,30 +16,16 @@ import { useAppContext } from './hooks/useAppContext';
 // });
 
 export default function App() {
-  const [value, setValue] = useState('');
-  const {
-    states: {
-      global: { snack },
-    },
-  } = useAppContext();
-
   return (
     <React.StrictMode>
       {/* <ApolloProvider client={client}> */}
 
       {/* <IonApp> */}
       <AppContextProvider>
-        <TextField // direct import from MUI
-          variant="outlined"
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          // color={'red'}  // doesn't work
-        />
-        <ButtonWithContext setValue={setValue}></ButtonWithContext>
-        {/* </IonApp> */}
+        <AlertWithContext></AlertWithContext>
+        <ButtonWithContext></ButtonWithContext>
       </AppContextProvider>
+      {/* </IonApp> */}
       {/* </ApolloProvider> */}
     </React.StrictMode>
   );

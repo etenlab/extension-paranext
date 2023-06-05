@@ -1,17 +1,31 @@
-import { Button } from "@eten-lab/ui-kit"
-import { useAppContext } from "../hooks/useAppContext";
+import { Button } from '@eten-lab/ui-kit';
+import { useAppContext } from '../hooks/useAppContext';
+import { TextField } from '@mui/material';
+import { useState } from 'react';
 
-type props = {
-  setValue(newValue:string): void;
-}
+export function ButtonWithContext() {
+  const {
+    actions: { alertFeedback },
+  } = useAppContext();
+  const [value, setValue] = useState('');
 
-export function ButtonWithContext({ setValue }: props) {
-  const {actions:{alertFeedback}} = useAppContext()  
   return (
-    <Button // import from ui-kit
-      onClick={() => {alertFeedback('info','test alertFeedback')}}
-    >
-      test button
-    </Button>
-  )
+    <>
+      <TextField // direct import from MUI - OK
+        variant="outlined"
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        // color={'red'}  // doesn't work
+      />
+      <Button // import from ui-kit - OK
+        onClick={() => {
+          alertFeedback('info', value);
+        }}
+      >
+        test button
+      </Button>
+    </>
+  );
 }
