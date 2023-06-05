@@ -6,10 +6,10 @@ type props = {
 }
 
 export function ButtonWithContext({ setValue }: props) {
-  const {someKey} = useAppContext()  
+  const {actions:{alertFeedback}} = useAppContext()  
   return (
     <Button // import from ui-kit
-      onClick={() => {setValue(someKey)}}
+      onClick={() => {alertFeedback('info','test alertFeedback')}}
     >
       test button
     </Button>

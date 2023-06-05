@@ -1,6 +1,6 @@
 import { actions } from './global.actions';
 import { type ActionType } from '.';
-import { type ISingletons } from '@/singletons';
+import { ISingletons } from '../singletons';
 
 export type FeedbackType = 'success' | 'error' | 'info' | 'warning';
 
@@ -85,6 +85,7 @@ export function reducer(
         feedbackType: FeedbackType;
         message: string;
       };
+      console.log('!!!!!!!!!!!!!!!', JSON.stringify(message))
       return {
         ...prevState,
         snack: {

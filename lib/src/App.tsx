@@ -1,7 +1,8 @@
-import { TextField } from "@mui/material";
-import React, { useState } from "react";
-import { AppContextProvider } from "./AppContext";
-import { ButtonWithContext } from "./components/buttonWithContext";
+import { TextField } from '@mui/material';
+import React, { useState } from 'react';
+import { AppContextProvider } from './AppContext';
+import { ButtonWithContext } from './components/buttonWithContext';
+import { useAppContext } from './hooks/useAppContext';
 
 /** doesn't work */
 // setupIonicReact();
@@ -16,27 +17,31 @@ import { ButtonWithContext } from "./components/buttonWithContext";
 // });
 
 export default function App() {
-  const [value, setValue] = useState('')
-  
+  const [value, setValue] = useState('');
+  const {
+    states: {
+      global: { snack },
+    },
+  } = useAppContext();
+
   return (
     <React.StrictMode>
       {/* <ApolloProvider client={client}> */}
-      
+
       {/* <IonApp> */}
       <AppContextProvider>
         <TextField // direct import from MUI
           variant="outlined"
           value={value}
-          onChange={(e) => {setValue(e.target.value)}}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
           // color={'red'}  // doesn't work
         />
-        <ButtonWithContext
-          setValue={setValue}
-        ></ButtonWithContext>
+        <ButtonWithContext setValue={setValue}></ButtonWithContext>
         {/* </IonApp> */}
-      </AppContextProvider>      
+      </AppContextProvider>
       {/* </ApolloProvider> */}
-        
-    </React.StrictMode>    
+    </React.StrictMode>
   );
 }

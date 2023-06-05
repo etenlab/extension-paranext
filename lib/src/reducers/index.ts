@@ -16,7 +16,7 @@ export interface ActionType<T> {
 
 export interface StateType {
   global: GlobalStateType;
-  documentTools: DocumentToolsStateType;
+  // documentTools: DocumentToolsStateType;
 }
 
 export const initialState = {
@@ -77,7 +77,7 @@ export function reducer(
 
   const newState = {
     global: globalReducer(state.global, action),
-    documentTools: documentToolsReducer(state.documentTools, action),
+    // documentTools: documentToolsReducer(state.documentTools, action),
   };
 
   persistStore(newState);
