@@ -2,9 +2,15 @@ import React from 'react';
 import { AppContextProvider } from './AppContext';
 import { ButtonWithContext } from './components/buttonWithContext';
 import { AlertWithContext } from './components/alertWithContext';
-import { IonApp, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { createUploadLink } from 'apollo-upload-client';
+import { IonReactRouter } from '@ionic/react-router';
+import { PageLayout } from '@/components/PageLayout';
+import { AppRoutes } from '@/routes/AppRoutes';
+
+// import { ThemeProvider } from '@eten-lab/ui-kit'; // It doesn't work.
+import { ThemeProvider } from './local-ui-kit/ThemeProvider'; // It works!
 
 setupIonicReact();
 
@@ -22,8 +28,16 @@ export default function App() {
       <ApolloProvider client={client}>
         <IonApp>
           <AppContextProvider>
-            <AlertWithContext></AlertWithContext>
-            <ButtonWithContext></ButtonWithContext>
+            <ThemeProvider autoDetectPrefersDarkMode={false}>
+              {/* <IonReactRouter> */}
+              {/* <PageLayout> */}
+              {/* <IonRouterOutlet id="crowd-bible-router-outlet"> */}
+              <AlertWithContext></AlertWithContext>
+              <ButtonWithContext></ButtonWithContext>
+              {/* </IonRouterOutlet> */}
+              {/* </PageLayout> */}
+              {/* </IonReactRouter> */}
+            </ThemeProvider>
           </AppContextProvider>
         </IonApp>
       </ApolloProvider>

@@ -4,6 +4,7 @@ import { TextField } from '@mui/material';
 import { useState } from 'react';
 
 export function ButtonWithContext() {
+  console.log('Button with context is loading');
   const {
     actions: { alertFeedback },
   } = useAppContext();
@@ -17,11 +18,7 @@ export function ButtonWithContext() {
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        // color={''}
-        sx={{
-          backgroundColor: 'red',
-          color: 'green',
-        }}
+        color={'green'}
       />
       <Button // import from ui-kit - OK
         onClick={() => {
