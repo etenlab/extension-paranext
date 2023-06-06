@@ -39,8 +39,10 @@ const webViewConfig = defineConfig(async ({ mode }) => {
       'process.env.REACT_APP_KEYCLOAK_CLIENT_ID': '"FAKE_CID"',
       'process.env.REACT_APP_KEYCLOAK_CLIENT_SECRET': '"FAKE_SECRET"',
       'process.env.PUBLIC_URL': '"FAKE_URL"',
-      'process.env.REACT_APP_LOGLEVEL': '"FAKE_LOGLEVEL"',
-      'process.env.REACT_APP_LOGTRACEALL': '"FAKE_LOGTRACEALL"',
+      'process.env.REACT_APP_LOGLEVEL': '0',
+      'process.env.REACT_APP_LOGTRACEALL': 'true',
+      'process.env.STORYBOOK_LOGLEVEL': '0',
+      'process.env.STORYBOOK_LOGTRACEALL': 'true',
     },
     build: {
       // This project is a library as it is being used in Paranext
