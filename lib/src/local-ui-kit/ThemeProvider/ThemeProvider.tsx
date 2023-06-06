@@ -19,6 +19,7 @@ import '@fontsource/noto-serif-display';
 import { deepmerge } from '@mui/utils';
 import { getThemeOptions } from './themeOptions';
 import { colors } from './palette';
+import { logger } from '../logger';
 
 export const mode =
   window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -27,7 +28,7 @@ export const mode =
 
 const ColorModeContext = createContext({
   setColorMode: (colorMode: 'light' | 'dark') => {
-    console.log(colorMode);
+    logger.info(colorMode);
   },
   getColor: (color: string) => {
     return color;

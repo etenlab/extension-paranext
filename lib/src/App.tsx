@@ -9,8 +9,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { PageLayout } from '@/components/PageLayout';
 import { AppRoutes } from '@/routes/AppRoutes';
 
-// import { ThemeProvider } from '@eten-lab/ui-kit'; // It doesn't work.
-import { ThemeProvider } from './local-ui-kit/ThemeProvider'; // It works!
+import { ThemeProvider } from '@eten-lab/ui-kit';
 
 setupIonicReact();
 
