@@ -1,34 +1,34 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { SqljsConnectionOptions } from 'typeorm/driver/sqljs/SqljsConnectionOptions';
-import {
-  Node,
-  NodePropertyKey,
-  NodePropertyValue,
-  NodeType,
-  Relationship,
-  RelationshipPropertyKey,
-  RelationshipPropertyValue,
-  RelationshipType,
-  Discussion,
-  File,
-  Post,
-  Reaction,
-  RelationshipPostFile,
-  User,
-  ElectionType,
-  Election,
-  Candidate,
-  Vote,
-} from '@/models/index';
-import initSqlJs, { SqlJsStatic } from 'sql.js';
+// import {
+//   Node,
+//   NodePropertyKey,
+//   NodePropertyValue,
+//   NodeType,
+//   Relationship,
+//   RelationshipPropertyKey,
+//   RelationshipPropertyValue,
+//   RelationshipType,
+//   Discussion,
+//   File,
+//   Post,
+//   Reaction,
+//   RelationshipPostFile,
+//   User,
+//   ElectionType,
+//   Election,
+//   Candidate,
+//   Vote,
+// } from '@/models/index';
+// import initSqlJs, { SqlJsStatic } from 'sql.js';
 import localforage from 'localforage';
 import { SyncSession } from './models/Sync';
 
 declare global {
   interface Window {
     localforage?: LocalForage;
-    SQL?: SqlJsStatic;
+    // SQL?: SqlJsStatic;
   }
 }
 
@@ -45,17 +45,18 @@ const asyncMemoize = <T>(f: () => Promise<T>): (() => Promise<T>) => {
 };
 
 const initialize = asyncMemoize(async () => {
-  return initSqlJs({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`,
-  }).then((SQL) => {
-    window.SQL = SQL;
-    window.localforage = localforage;
-    localforage.config({
-      description: 'user',
-      driver: localforage.INDEXEDDB,
-    });
-  });
+  // return initSqlJs({
+  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`,  // TODO: Problem is here!
+  // }).then((SQL) => {
+  //   window.SQL = SQL;
+  //   window.localforage = localforage;
+  //   localforage.config({
+  //     description: 'user',
+  //     driver: localforage.INDEXEDDB,
+  //   });
+  // });
+  return true;
 });
 
 const options: SqljsConnectionOptions = {
@@ -67,32 +68,33 @@ const options: SqljsConnectionOptions = {
   synchronize: true,
   migrationsRun: true,
   entities: [
-    Node,
-    NodeType,
-    NodePropertyKey,
-    NodePropertyValue,
-    Relationship,
-    RelationshipType,
-    RelationshipPropertyKey,
-    RelationshipPropertyValue,
-    Discussion,
-    File,
-    Post,
-    Reaction,
-    RelationshipPostFile,
-    User,
-    ElectionType,
-    Election,
-    Candidate,
-    Vote,
-    SyncSession,
+    // Node,
+    // NodeType,
+    // NodePropertyKey,
+    // NodePropertyValue,
+    // Relationship,
+    // RelationshipType,
+    // RelationshipPropertyKey,
+    // RelationshipPropertyValue,
+    // Discussion,
+    // File,
+    // Post,
+    // Reaction,
+    // RelationshipPostFile,
+    // User,
+    // ElectionType,
+    // Election,
+    // Candidate,
+    // Vote,
+    // SyncSession,
   ],
   migrations: ['migrations/*.ts'],
 };
 
 const getDataSource = (opts: SqljsConnectionOptions) => async () => {
   await initialize();
-  return new DataSource(opts);
+  // return new DataSource(opts); // TODO: Problem is here also! (related to initialize ?)
+  return true;
 };
 
 export const getAppDataSource = asyncMemoize(

@@ -26,17 +26,17 @@ export interface ContextType {
   };
   actions: {
     alertFeedback: (feedbackType: FeedbackType, message: string) => void;
+    closeFeedback: () => void;
     // setUser: (user: IUser) => void;
     // setRole: (roles: RoleType) => void;
     // setMode: (mode: IMode) => void;
     // setPrefersColorScheme: (themeMode: PrefersColorSchemeType) => void;
     // setConnectivity: (connectivity: boolean) => void;
     // logout: () => void;
-    // closeFeedback: () => void;
     // setSourceLanguage: (lang: LanguageInfo | null) => void;
     // setTargetLanguage: (lang: LanguageInfo | null) => void;
-    // setLoadingState: (state: boolean) => void;
-    // setSqlPortalShown: (isSqlPortalShown: boolean) => void;
+    setLoadingState: (state: boolean) => void;
+    setSqlPortalShown: (isSqlPortalShown: boolean) => void;
   };
 }
 
@@ -54,16 +54,16 @@ export function AppContextProvider({ children }: AppProviderProps) {
 
   const {
     alertFeedback,
-    // closeFeedback,
+    closeFeedback,
     // setRole,
     // setUser,
     // setMode,
     // setConnectivity,
     // setPrefersColorScheme,
     // logout,
-    // setLoadingState,
-    // setSingletons,
-    // setSqlPortalShown,
+    setSingletons,
+    setLoadingState,
+    setSqlPortalShown,
   } = useGlobal({
     dispatch,
   });
@@ -81,12 +81,13 @@ export function AppContextProvider({ children }: AppProviderProps) {
   //   });
   // }, [setConnectivity]);
 
-  // useEffect(() => {
-  //   setSingletons(null);
-  //   getAppDataSource().then((_ds) => {
-  //     getSingletons(_ds).then(setSingletons);
-  //   });
-  // }, [setSingletons]);
+  useEffect(() => {
+    setSingletons(null);
+    getAppDataSource().then((_ds) => {   // TODO !!! Problem is  here!!!!
+      //   getSingletons(_ds).then(setSingletons);
+      console.log(`-----------------`, JSON.stringify(_ds));
+    });
+  }, [setSingletons]);
 
   const value = {
     states: {
@@ -95,18 +96,18 @@ export function AppContextProvider({ children }: AppProviderProps) {
     },
     actions: {
       alertFeedback,
-      // closeFeedback,
+      closeFeedback,
       // setRole,
       // setUser,
       // setMode,
       // setConnectivity,
       // setPrefersColorScheme,
-      // setLoadingState,
-      // setSingletons,
+      setSingletons, 
       // setSourceLanguage,
       // setTargetLanguage,
       // logout,
-      // setSqlPortalShown,
+      setLoadingState,
+      setSqlPortalShown,
     },
   };
 
