@@ -28,14 +28,14 @@ export default function App() {
         <IonApp>
           <AppContextProvider>
             <ThemeProvider autoDetectPrefersDarkMode={false}>
-              {/* <IonReactRouter> */}
-              {/* <PageLayout> */}
-              {/* <IonRouterOutlet id="crowd-bible-router-outlet"> */}
-              <AlertWithContext></AlertWithContext>
-              <ButtonWithContext></ButtonWithContext>
-              {/* </IonRouterOutlet> */}
-              {/* </PageLayout> */}
-              {/* </IonReactRouter> */}
+              <IonReactRouter>
+                <PageLayout>
+                  <IonRouterOutlet id="crowd-bible-router-outlet">
+                    <AlertWithContext></AlertWithContext>
+                    <ButtonWithContext></ButtonWithContext>
+                  </IonRouterOutlet>
+                </PageLayout>
+              </IonReactRouter>
             </ThemeProvider>
           </AppContextProvider>
         </IonApp>
