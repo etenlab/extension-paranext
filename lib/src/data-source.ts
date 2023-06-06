@@ -21,14 +21,14 @@ import { SqljsConnectionOptions } from 'typeorm/driver/sqljs/SqljsConnectionOpti
 //   Candidate,
 //   Vote,
 // } from '@/models/index';
-// import initSqlJs, { SqlJsStatic } from 'sql.js';
+import initSqlJs, { SqlJsStatic } from 'sql.js';
 import localforage from 'localforage';
 import { SyncSession } from './models/Sync';
 
 declare global {
   interface Window {
     localforage?: LocalForage;
-    // SQL?: SqlJsStatic;
+    SQL?: SqlJsStatic;
   }
 }
 
@@ -92,7 +92,7 @@ const options: SqljsConnectionOptions = {
 };
 
 const getDataSource = (opts: SqljsConnectionOptions) => async () => {
-  await initialize();
+  await initialize(); // TODO: Looks like the problem is here.
   // return new DataSource(opts); // TODO: Problem is here also! (related to initialize ?)
   return true;
 };
