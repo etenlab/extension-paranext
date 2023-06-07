@@ -31,11 +31,12 @@ export default function App() {
               <IonReactRouter>
                 <PageLayout>
                   <IonRouterOutlet id="crowd-bible-router-outlet">
-                    <AlertWithContext></AlertWithContext>
-                    <ButtonWithContext></ButtonWithContext>
+                    <AppRoutes />
                   </IonRouterOutlet>
                 </PageLayout>
               </IonReactRouter>
+              <AlertWithContext></AlertWithContext>
+              <ButtonWithContext></ButtonWithContext>
             </ThemeProvider>
           </AppContextProvider>
         </IonApp>

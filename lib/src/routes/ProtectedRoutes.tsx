@@ -23,7 +23,7 @@ export function ProtectedRoutes() {
         <Route exact path="/home">
           <HomePage />
         </Route>
-
+{/* 
         <Route exact path="/profile">
           <ProfilePage />
         </Route>
@@ -45,9 +45,9 @@ export function ProtectedRoutes() {
 
         <Route exact path="/admin">
           <AdminPage />
-        </Route>
+        </Route> */}
       </Switch>
-
+{/* 
       <DocumentToolsRoutes />
 
       <LanguageToolsRoutes />
@@ -62,7 +62,7 @@ export function ProtectedRoutes() {
 
       <Route exact path="/">
         <Redirect to="/home" />
-      </Route>
+      </Route> */}
     </>
   );
 }
