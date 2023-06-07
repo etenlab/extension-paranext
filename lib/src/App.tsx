@@ -28,7 +28,7 @@ export default function App() {
         <IonApp>
           <AppContextProvider>
             <ThemeProvider autoDetectPrefersDarkMode={false}>
-              <IonReactRouter>
+              <IonReactRouter forceRefresh={true}>
                 <PageLayout>
                   <IonRouterOutlet id="crowd-bible-router-outlet">
                     <AppRoutes />

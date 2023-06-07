@@ -92,8 +92,8 @@ const options: SqljsConnectionOptions = {
 };
 
 const getDataSource = (opts: SqljsConnectionOptions) => async () => {
-  await initialize(); 
-  // return new DataSource(opts); // doesn't work
+  await initialize();
+  return new DataSource(opts); // doesn't work
   // return new DataSource({type:'sqljs'}); // simplify options to only setting mandatory prop `type` but still doesn't work
   return true;
 };
