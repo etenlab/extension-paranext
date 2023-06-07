@@ -58,7 +58,9 @@ export function PageLayout({ children }: PageLayoutProps) {
     ref.current!.toggle();
   };
 
-  const isLoading = loading || !singletons;
+  // temporary, until we get singletons working
+  // const isLoading = loading || !singletons;
+  const isLoading = false;
 
   return (
     <>

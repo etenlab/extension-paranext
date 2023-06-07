@@ -15,7 +15,8 @@ export function useSingletons() {
 
   useEffect(() => {
     getAppDataSource().then((_ds) => {
-      getSingletons(_ds).then(setSingletons);
+      // getSingletons(_ds).then(setSingletons);
+      console.log(`-=-=-=`, JSON.stringify(_ds))
     });
   }, []);
 
