@@ -30,7 +30,8 @@ const webViewConfig = defineConfig(async ({ mode }) => {
     // Since Vite is in library mode `process` is not replaced by default and that won't work in the
     // renderer.
     define: { 
-      'process.env.NODE_ENV': JSON.stringify(mode),
+      // 'process.env.NODE_ENV': JSON.stringify(mode),
+      'process.env.NODE_ENV': 'development',
       // There were a lot of process variables that we must bake in. Set them to whatever is
       // correct for your build process
       'process.env.REACT_APP_CPG_SERVER_URL': '"FAKE_URL"',

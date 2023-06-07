@@ -45,18 +45,18 @@ const asyncMemoize = <T>(f: () => Promise<T>): (() => Promise<T>) => {
 };
 
 const initialize = asyncMemoize(async () => {
-  // return initSqlJs({
-  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`,  // TODO: Problem is here!
-  // }).then((SQL) => {
-  //   window.SQL = SQL;
-  //   window.localforage = localforage;
-  //   localforage.config({
-  //     description: 'user',
-  //     driver: localforage.INDEXEDDB,
-  //   });
-  // });
-  return true;
+  return initSqlJs({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`, // TODO: Problem is here!
+  }).then((SQL) => {
+    window.SQL = SQL;
+    window.localforage = localforage;
+    localforage.config({
+      description: 'user',
+      driver: localforage.INDEXEDDB,
+    });
+    console.log(`=========`);
+  });
 });
 
 const options: SqljsConnectionOptions = {
@@ -66,7 +66,7 @@ const options: SqljsConnectionOptions = {
   // logging: ['error', 'query', 'schema'],
   logging: ['error'],
   synchronize: true,
-  migrationsRun: true,
+  migrationsRun: true, // TODO: set to false - we dont' use migrations
   entities: [
     // Node,
     // NodeType,
@@ -88,12 +88,13 @@ const options: SqljsConnectionOptions = {
     // Vote,
     // SyncSession,
   ],
-  migrations: ['migrations/*.ts'],
+  migrations: ['migrations/*.ts'], // TODO: delete at all - we dont use migrations
 };
 
 const getDataSource = (opts: SqljsConnectionOptions) => async () => {
-  await initialize(); // TODO: Looks like the problem is here.
-  // return new DataSource(opts); // TODO: Problem is here also! (related to initialize ?)
+  await initialize(); 
+  return new DataSource(opts); // doesn't work
+  // return new DataSource({type:'sqljs'}); // simplify options to only setting mandatory prop `type` but still doesn't work
   return true;
 };
 

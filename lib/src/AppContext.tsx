@@ -83,9 +83,9 @@ export function AppContextProvider({ children }: AppProviderProps) {
 
   useEffect(() => {
     setSingletons(null);
-    getAppDataSource().then((_ds) => {   // TODO !!! Problem is  here!!!!
-      //   getSingletons(_ds).then(setSingletons);
-      console.log(`-----------------`, JSON.stringify(_ds));
+    getAppDataSource().then((_ds) => {
+      // getSingletons(_ds).then(setSingletons);
+      console.log(`---------`, JSON.stringify(_ds));
     });
   }, [setSingletons]);
 
@@ -102,7 +102,7 @@ export function AppContextProvider({ children }: AppProviderProps) {
       // setMode,
       // setConnectivity,
       // setPrefersColorScheme,
-      setSingletons, 
+      setSingletons,
       // setSourceLanguage,
       // setTargetLanguage,
       // logout,
