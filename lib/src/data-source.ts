@@ -47,7 +47,7 @@ const asyncMemoize = <T>(f: () => Promise<T>): (() => Promise<T>) => {
 const initialize = asyncMemoize(async () => {
   return initSqlJs({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`, // TODO: Problem is here!
+    locateFile: (file_1: any) => `https://sql.js.org/dist/${file_1}`,
   }).then((SQL) => {
     window.SQL = SQL;
     window.localforage = localforage;
