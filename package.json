@@ -12,7 +12,8 @@
     "start:vite": "concurrently \"npm:start:vite1\" \"npm:start:vite2\"",
     "start:core": "cd ../paranext-core && npm run start",
     "start": "cross-env MAIN_ARGS=\"--extensions $INIT_CWD/dist\" concurrently \"npm:start:vite\" \"npm:start:core\"",
-    "lint": "tsc"
+    "lint": "tsc",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@apollo/client": "^3.7.11",
