@@ -5,11 +5,12 @@ import { AlertWithContext } from './components/alertWithContext';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { createUploadLink } from 'apollo-upload-client';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import { PageLayout } from '@/components/PageLayout';
 import { AppRoutes } from '@/routes/AppRoutes';
 
 import { ThemeProvider } from '@eten-lab/ui-kit';
+// import { HashRouter } from 'react-router-dom';
 
 setupIonicReact();
 
@@ -28,13 +29,15 @@ export default function App() {
         <IonApp>
           <AppContextProvider>
             <ThemeProvider autoDetectPrefersDarkMode={false}>
-              <IonReactRouter forceRefresh={true}>
+              {/* <IonReactRouter forceRefresh={true}> */}
+              <IonReactHashRouter>
                 <PageLayout>
                   <IonRouterOutlet id="crowd-bible-router-outlet">
                     <AppRoutes />
                   </IonRouterOutlet>
                 </PageLayout>
-              </IonReactRouter>
+              </IonReactHashRouter>
+              {/* </IonReactRouter> */}
               <AlertWithContext></AlertWithContext>
               <ButtonWithContext></ButtonWithContext>
             </ThemeProvider>

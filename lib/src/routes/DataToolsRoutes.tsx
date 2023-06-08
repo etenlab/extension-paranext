@@ -8,17 +8,17 @@ import { SqlRunner } from '../pages/DataTools/SqlRunner/SqlRunner';
 export function DataToolsRoutes() {
   return (
     <Switch>
-      <Route exact path="/graph-viewer">
+      {/* <Route exact path="/graph-viewer">
         <SearchNodePage />
       </Route>
 
       <Route exact path="/graph-viewer/:nodeId">
         <NodeDetailsPage />
-      </Route>
+      </Route> */}
 
-      <Route exact path="/file-import">
+      {/* <Route exact path="/file-import">
         <FileImportPage />
-      </Route>
+      </Route> */}
 
       <Route exact path="/sql-runner">
         <SqlRunner />
